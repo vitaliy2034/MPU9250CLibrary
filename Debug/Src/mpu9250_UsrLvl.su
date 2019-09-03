@@ -1,0 +1,8 @@
+mpu9250_UsrLvl.c:13:11:SetAccelScale	16	static
+mpu9250_UsrLvl.c:20:11:SetupAccelBandwidthAndRate	16	static
+mpu9250_UsrLvl.c:26:11:SetupAccelBandwidthAndRateLP	24	static
+mpu9250_UsrLvl.c:32:11:GetAccelMeas	32	static
+mpu9250_UsrLvl.c:43:11:GetAccelAMMeas	48	static
+mpu9250_UsrLvl.c:61:11:SetGyroScale	16	static
+mpu9250_UsrLvl.c:68:11:SetupGyroBandwidthAndRate	24	static
+mpu9250_UsrLvl.c:82:11:GetGyroMeas	32	static

@@ -1,0 +1,9 @@
+mpu9250_RegLvl.c:10:6:delay_smart_ms	40	static,ignoring_inline_asm
+mpu9250_RegLvl.c:18:11:BeginMPU9250	24	static
+mpu9250_RegLvl.c:88:11:ReadRegisterMPU9250_Polling	16	static
+mpu9250_RegLvl.c:105:11:ReadRegistersMPU9250_Polling	24	static
+mpu9250_RegLvl.c:132:11:WriteRegisterMPU9250_Polling	16	static
+mpu9250_RegLvl.c:154:18:ReadRawOutMagAK8963	16	static
+mpu9250_RegLvl.c:157:18:ReadRawOutGyroMPU9250	32	static
+mpu9250_RegLvl.c:164:18:ReadRawOutAccelMPU9250	32	static
+mpu9250_RegLvl.c:172:6:isMagDataReady	16	static
