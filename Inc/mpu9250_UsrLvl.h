@@ -28,13 +28,15 @@ errorCode SetGyroScale(GyroCfg Scale);//Setup gyroscope full scale range*
 
 
 //Setup Accelerometer data rate and bandwidth of HARDWARE DIGITAL LOW PASS FILTER(DLPF) or Dec1 or Dec2
-errorCode SetupAccelBandwidthAndRate(AccelCfg OutRateParam);//Setup Accelerometer Data Rates and Bandwidths  (Normal Mode)*
+errorCode SetupAccelBandwidthAndRate(AccelCfg OutRateParam );//Setup Accelerometer Data Rates and Bandwidths  (Normal Mode)*
 errorCode SetupAccelBandwidthAndRateLP(AccelCfg OutRateParam);//Setup Accelerometer Data Rates and Bandwidths (Low Power Mode)*
 //*For more information refer to Register Manual of MPU9250 (Registers 28,29,30)
+
 
 //Setup Gyroscope and Temperature data rate and bandwidth of HARDWARE DIGITAL LOW PASS FILTER(DLPF)(if used)
 errorCode SetupGyroBandwidthAndRate(GyroCfg OutRateParam);//Setup Gyroscope and Temperature sensor Data Rates and Bandwidths  *
 //*For more information refer to Register Manual of MPU9250 (Registers 26,27)
+
 
 //Read measurements NO SOFTWARE FILTER
 errorCode GetMagMeas(Vector3D * MagMeas);//in uT
