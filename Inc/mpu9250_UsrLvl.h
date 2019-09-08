@@ -22,7 +22,7 @@ typedef uint8_t GyroCfg;
 typedef uint8_t MagCfg;
 
 
-//Setup MPU9250 and AK8963
+//Setup scale MPU9250 and TODO: scale AK8963
 errorCode SetAccelScale(AccelCfg Scale);//Setup accelerometer full scale range*
 errorCode SetGyroScale(GyroCfg Scale);//Setup gyroscope full scale range*
 

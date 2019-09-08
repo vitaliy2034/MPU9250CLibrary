@@ -26,7 +26,8 @@ errorCode SetupAccelBandwidthAndRate(AccelCfg OutRateParam){
 errorCode SetupAccelBandwidthAndRateLP(AccelCfg OutRateParam){
 	if(OutRateParam>ACCEL_LP_500Hz||OutRateParam<ACCEL_LP_0Hz26)//check is parameters wrong
 		return ERR_WRONG_PARAM_MPU9250;
-	return WriteRegisterMPU9250_Polling(LP_ACCEL_ODR, OutRateParam)|WriteRegisterMPU9250_Polling(ACCEL_CONFIG2, OutRateParam);
+	return WriteRegisterMPU9250_Polling(LP_ACCEL_ODR, OutRateParam)|
+			WriteRegisterMPU9250_Polling(ACCEL_CONFIG2, OutRateParam);
 }
 
 errorCode GetAccelMeas(Vector3D * AccelMeas){
@@ -84,10 +85,19 @@ errorCode GetGyroMeas(Vector3D * GyroMeas){
 		errorCode err=ReadRawOutGyroMPU9250(&Mes);
 		if(err)
 			return err;
-		GyroMeas->x=(float)Mes.x/(16.368f/(1<<(cfgGyroScale>>3)));
-		GyroMeas->y=(float)Mes.y/(16.368f/(1<<(cfgGyroScale>>3)));
-		GyroMeas->z=(float)Mes.z/(16.368f/(1<<(cfgGyroScale>>3)));
+		GyroMeas->x=(float)Mes.x/(131.0f/(1<<(cfgGyroScale>>3)));
+		GyroMeas->y=(float)Mes.y/(131.0f/(1<<(cfgGyroScale>>3)));
+		GyroMeas->z=(float)Mes.z/(131.0f/(1<<(cfgGyroScale>>3)));
 		return err;
 }
 //Magnetometer functions
-
+errorCode GetMagMeas(Vector3D * MagMeas){//not finish with scale
+	VectorRaw Mes;
+	errorCode err=ReadRawOutMagAK8963(&Mes);
+	if(err)
+		return err;
+	MagMeas->x=(float)Mes.x*0.15f;
+	MagMeas->y=(float)Mes.y*0.15f;
+	MagMeas->z=(float)Mes.z*0.15f;
+	return err;
+}

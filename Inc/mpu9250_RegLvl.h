@@ -23,7 +23,7 @@
 #define CS_ON GPIOA->BSRR=GPIO_BSRR_BR_4
 #define CS_OFF GPIOA->BSRR=GPIO_BSRR_BS_4
 
-typedef struct VectorRaw{
+typedef struct VectorRaw{// Raw read structure
 	int16_t x;
 	int16_t y;
 	int16_t z;
@@ -32,18 +32,18 @@ typedef uint8_t errorCode;
 
 
 errorCode BeginMPU9250();
-errorCode ReadRegistersMPU9250_Polling(uint8_t RegAdress, uint8_t Cnt0fBytes,uint8_t *Buffer,bool Increm);
-errorCode ReadRegisterMPU9250_Polling(uint8_t RegAdress,uint8_t *Val);
+errorCode ReadRegistersMPU9250_Polling(uint8_t RegAdress, uint8_t Cnt0fBytes,uint8_t *Buffer,bool Increm);//Read Registers in MPU9250
+errorCode ReadRegisterMPU9250_Polling(uint8_t RegAdress,uint8_t *Val);//Read Register in MPU9250
 //errorCode WriteRegisterAK_Polling(uint8_t RegAdress,uint8_t *Val);
-errorCode WriteRegisterMPU9250_Polling(uint8_t RegAdress,uint8_t Data);
-errorCode EndMPU9250();
+errorCode WriteRegisterMPU9250_Polling(uint8_t RegAdress,uint8_t Data);//Write register in MPU9250
+errorCode EndMPU9250();//TODO: make this function
 
 
 void delay_smart_ms(uint32_t ms);
 
-errorCode ReadRawOutMagAK8963( VectorRaw *RawMagVector);
-errorCode ReadRawOutAccelMPU9250( VectorRaw *RawAccelVector);
-errorCode ReadRawOutGyroMPU9250(VectorRaw *RawGyroVector);
+errorCode ReadRawOutMagAK8963( VectorRaw *RawMagVector);//Read Raw registers in magnetometer sensor
+errorCode ReadRawOutAccelMPU9250( VectorRaw *RawAccelVector);//Read Raw registers in accelerometer sensor
+errorCode ReadRawOutGyroMPU9250(VectorRaw *RawGyroVector);//Read Raw registers in gyroscope sensor
 bool isDataReadyAK8963();
 bool isDataReadyMPU9250();
 #endif /* MPU9250_REGLVL_H_ */
